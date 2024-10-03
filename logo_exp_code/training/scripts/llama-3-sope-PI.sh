@@ -1,0 +1,40 @@
+DEEPSPEED_CONFIG="training/config/stage2.json"
+DEEPSPEED_CONFIG="training/config/stage2.json"
+ZERO2="training/config/stage2.json"
+ZERO3="training/config/stage3.json"
+ZERO3_FAST="training/config/zero3-fast.json"
+DIR="/data/zecheng/ckpt"
+
+deepspeed --num_gpus=8 ./training/train_simpo2_8k.py  \
+        --output_dir=${DIR}/s1-sope-PI \
+        --max_steps=6000 \
+        --logging_steps=1 \
+        --per_device_train_batch_size=1 \
+        --per_device_eval_batch_size=1 \
+        --gradient_accumulation_steps=4 \
+        --gradient_checkpointing=True \
+        --learning_rate=1e-4 \
+        --model_name_or_path="/data/zecheng/hf_models/Meta-Llama-3-8B-Instruct" \
+        --lr_scheduler_type="cosine" \
+        --max_length=10000 \
+        --bf16 True \
+        --max_position_embeddings=8192 \
+        --model_dtype="bfloat16" \
+        --warmup_steps=50 \
+        --save_steps=200 \
+        --lora_r=32 \
+        --lora_alpha=16 \
+        --dataset_num_proc=32 \
+        --save_total_limit=5 \
+        --save_strategy="steps" \
+        --evaluation_strategy="no" \
+        --weight_decay=0.05 \
+        --optim="paged_adamw_32bit" \
+        --report_to="tensorboard" \
+        --dataset_path="/data/zecheng/data/processed_project/mix_chunks" \
+        --deepspeed=${ZERO2} \
+        --save_only_model \
+        --load_in_4_bit=False \
+        --save_safetensors=False \
+        --rope_type="dynamic" \
+        --factor=8;

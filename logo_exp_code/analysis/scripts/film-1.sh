@@ -1,0 +1,8 @@
+CUDA_VISIBLE_DEVICES=0 nohup python retrieval_head_detection.py --model_path /vepfs/wcf/G/zecheng/hf_models/FILM-7B --s 0 --e 50000 --needle_id 0 --needle_file "needles.jsonl" 2>&1 | tee logs/FILM-1.log &
+CUDA_VISIBLE_DEVICES=1 nohup python retrieval_head_detection.py --model_path /vepfs/wcf/G/zecheng/hf_models/FILM-7B --s 0 --e 50000 --needle_id 1 --needle_file "needles.jsonl" 2>&1 | tee logs/FILM-2.log &
+CUDA_VISIBLE_DEVICES=2 nohup python retrieval_head_detection.py --model_path /vepfs/wcf/G/zecheng/hf_models/FILM-7B --s 0 --e 50000 --needle_id 2 --needle_file "needles.jsonl" 2>&1 | tee logs/FILM-3.log &
+CUDA_VISIBLE_DEVICES=3 nohup python retrieval_head_detection.py --model_path /vepfs/wcf/G/zecheng/hf_models/FILM-7B --s 0 --e 50000 --needle_id 3 --needle_file "needles.jsonl" 2>&1 | tee logs/FILM-4.log &
+CUDA_VISIBLE_DEVICES=4 nohup python retrieval_head_detection.py --model_path /vepfs/wcf/G/zecheng/hf_models/FILM-7B --s 0 --e 50000 --needle_id 4 --needle_file "needles.jsonl" 2>&1 | tee logs/FILM-5.log &
+CUDA_VISIBLE_DEVICES=5 nohup python retrieval_head_detection.py --model_path /vepfs/wcf/G/zecheng/hf_models/FILM-7B --s 0 --e 50000 --needle_id 5 --needle_file "needles.jsonl" 2>&1 | tee logs/FILM-6.log &
+CUDA_VISIBLE_DEVICES=6 nohup python retrieval_head_detection.py --model_path "/vepfs/wcf/G/zecheng/hf_models/Mistral-7B-Instruct-v0.2" --s 0 --e 50000 --needle_id 4 --needle_file "needles.jsonl" 2>&1 | tee logs/FILM-5.log &
+CUDA_VISIBLE_DEVICES=7 nohup python retrieval_head_detection.py --model_path "/vepfs/wcf/G/zecheng/hf_models/Mistral-7B-Instruct-v0.2" --s 0 --e 50000 --needle_id 5 --needle_file "needles.jsonl" 2>&1 | tee logs/FILM-6.log &

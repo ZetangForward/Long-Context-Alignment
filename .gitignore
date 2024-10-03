@@ -1,3 +1,9 @@
-*jsonl
+*.jsonl
+*.json
+*.txt
+*.png
+*.pdf
+*.csv
 *.log
 *.pyc
+*.csv
