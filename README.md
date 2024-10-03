@@ -4,8 +4,6 @@
 
 - Teaser video
 - Images Carousel
-- Youtube embedding
-- Video Carousel
 - PDF Poster
 - Bibtex citation
 
